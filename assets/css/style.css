@@ -594,10 +594,6 @@ body.nav-active { overflow: hidden; }
 
 .topbar { display: none; color: black; }
 
-
-
-
-
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -618,7 +614,7 @@ body.nav-active { overflow: hidden; }
 
 .header.active {
   padding-block: 20px;
-  background-color: var(--eerie-black-4);
+  background-color: var(--eerie-black-1);
   border-color: var(--black-alpha-15);
 }
 
@@ -662,7 +658,7 @@ body.nav-active { overflow: hidden; }
   position: fixed;
   background-color: #8EACCD;
   top: 0;
-  
+  left: 0;
   transform: translateX(-50%);
   width: 100%;
   max-width: 360px;
@@ -673,7 +669,6 @@ body.nav-active { overflow: hidden; }
   z-index: 2;
   transition: var(--transition-2);
 }
-
 
 .navbar.active {
   visibility: visible;
@@ -700,8 +695,6 @@ body.nav-active { overflow: hidden; }
 
   
 }
-
-
 
 .navbar-list {
   border-block-end: 1px solid var(--white-alpha-20);
@@ -1098,6 +1091,7 @@ body.nav-active { overflow: hidden; }
 .menu-card .card-text {
   color: black;
   line-height: var(--lineHeight-4);
+  font-size: 15px;
 }
 
 /* Removing unnecessary pseudo-elements */
