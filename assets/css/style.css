@@ -690,11 +690,15 @@ body.nav-active { overflow: hidden; }
 
 .navbar .close-btn:is(:hover, :focus-visible) { color: var(--gold-crayola); }
 
-.navbar .logo {
-  max-width: max-content;
-  margin-inline: auto;
-  margin-block-end: 60px;
+.header .logo {
+  position: absolute;
+  top: 0; /* Moves logo to the very top */
+  left: 0; /* Moves logo to the very left */
+
+  
 }
+
+
 
 .navbar-list {
   border-block-end: 1px solid var(--white-alpha-20);
