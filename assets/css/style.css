@@ -1152,13 +1152,20 @@ body.nav-active { overflow: hidden; }
 
 .feature-card:hover .card-icon { transform: scale(-1) rotate(180deg); }
 
-.feature-card .card-title { margin-block: 20px; font-family: var(--fontFamily-dm_sans);}
+.feature-card .card-title { 
+  margin-block: 20px; 
+  font-family: var(--fontFamily-dm_sans);
+  font-weight: bold;}
 
 .feature-card .card-text {
   color: var(--quick-silver);
   line-height: var(--lineHeight-6);
   font-size: 17px;
 }
+
+
+
+
 
 
 
