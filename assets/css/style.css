@@ -103,6 +103,9 @@
 
 
 
+
+
+
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -1189,7 +1192,9 @@ body.nav-active { overflow: hidden; }
 .footer-brand .logo {
   max-width: max-content;
   margin-inline: auto;
-  margin-block-end: 15px; /* Reduced space below logo */
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 
