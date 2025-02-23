@@ -866,12 +866,19 @@ body.nav-active { overflow: hidden; }
 
 /* Center and Apply the Color Change to "Start the Adventure" Button */
 .btn-primary {
-  background-color: #9DBDFF;
+  background-color: rgba(255, 255, 255, 0.2);
   transition: background-color 0.3s ease;
-  display: inline-block; /* Ensure proper inline positioning */
-  text-align: center;
+  display: flex; /* Use flex to center */
+  justify-content: center;
+  align-items: center;
   margin: 0 auto; /* Center it */
+  border-width: 3px;
 }
+
+.btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 
 .btn-primary:hover {
   background-color: #55679C;
