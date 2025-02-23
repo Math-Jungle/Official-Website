@@ -1,1 +1,1 @@
-![Math-Jungle logo](./assets/images/favicon.png)
+Math Jungle Official Website
