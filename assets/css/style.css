@@ -947,34 +947,41 @@ body.nav-active { overflow: hidden; }
   color: black;
 }
 
-.service-card { 
-  overflow: hidden; 
-  margin-bottom: 0px;
-  text-align: center; /* Ensures alignment looks clean */
+.service-card {
+  border-radius: 50px; /* Softens the edges */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+  padding: 20px; /* Adjust padding */
+  transition: var(--transition-2); /* Smooth hover effect */
 }
 
 /* Ensuring the hover effect is only on the image */
 .service-card .has-before {
   display: inline-block; 
-  border-radius: 50%;
+  border-radius: 50px;
   overflow: hidden;
 }
 
 /* Make the image round */
 .service-card .card-banner {
-  width: 285px; /* Set width explicitly */
-  height: 285px; /* Make it a perfect circle */
-  border-radius: 50%; /* This makes the image round */
-  overflow: hidden; /* Ensures content stays within the round shape */
-  transition: var(--transition-2); /* Adds smooth effect */
+  border-radius: 50px; /* Slightly rounded edges for the image */
+  width: 240px; /* Reduce width */
+  height: 280px; /* Reduce height */
+  display: block;
+  margin: 0 auto; /* Centers the image */
 }
 
 /* Make sure the image inside also follows the round shape */
 .service-card .card-banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fills the circular space properly */
-  border-radius: 50%; /* Ensures the image itself is also round */
+  object-fit: cover; /* Keeps image proportions */
+  border-radius: 30px; /* Ensures the image matches banner */
+}
+
+/* Optional: Subtle hover effect */
+.service-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Limit hover effect to the image */
@@ -1118,7 +1125,7 @@ body.nav-active { overflow: hidden; }
 
 .features .section-title { margin-block-end: 40px; }
 
-.feature-card { padding: 30px 20px 40px; }
+.feature-card { padding: 30px 20px 40px; border-radius: 50px;}
 
 .feature-item:nth-child(2n+1) .feature-card { background-color: var(--eerie-black-3); }
 
