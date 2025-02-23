@@ -938,48 +938,72 @@ body.nav-active { overflow: hidden; }
   #SERVICE
 \*-----------------------------------*/
 
-.service .section-title { margin-block-end: 16px; }
+.service .section-title { 
+  margin-block-end: 16px; 
+}
 
-.service .section-text { margin-block-end: 40px; color: black;}
+.service .section-text { 
+  margin-block-end: 40px; 
+  color: black;
+}
 
-.service-card { overflow: hidden; margin-bottom: 0px;}
+.service-card { 
+  overflow: hidden; 
+  margin-bottom: 0px;
+  text-align: center; /* Ensures alignment looks clean */
+}
 
+/* Ensuring the hover effect is only on the image */
 .service-card .has-before {
-  padding-block: 20px;  /* Reduce padding to bring text closer */
-  margin-block-end: 10px;  /* Reduce margin to decrease gap */
+  display: inline-block; 
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-/* .service-card .has-before::before {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140px;
+/* Make the image round */
+.service-card .card-banner {
+  width: 285px; /* Set width explicitly */
+  height: 285px; /* Make it a perfect circle */
+  border-radius: 50%; /* This makes the image round */
+  overflow: hidden; /* Ensures content stays within the round shape */
+  transition: var(--transition-2); /* Adds smooth effect */
+}
+
+/* Make sure the image inside also follows the round shape */
+.service-card .card-banner img {
+  width: 100%;
   height: 100%;
-  background-image: url('../images/img-pattern.svg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
-  transition: var(--transition-2);
-  transition-delay: 0;
-  z-index: -1;
-  will-change: transform;
-} */
-
-.service-card:is(:hover, :focus-within) .has-before::before {
-  transform: rotateY(0.5turn) translateX(50%);
-  transition-delay: 300ms;
+  object-fit: cover; /* Ensures the image fills the circular space properly */
+  border-radius: 50%; /* Ensures the image itself is also round */
 }
 
-.btn-text {
-  color: hsla(0, 0%, 65%, 1);
+/* Limit hover effect to the image */
+.service-card:is(:hover, :focus-within) .card-banner {
+  transform: scale(1.05);
+}
+
+/* Card title styling */
+.service-card .card-title {
+  margin-block-end: 8px; /* Reduce margin below the title */
+  margin-top: 20px;
+  color: #1E2A5E;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Button styling */
+.service-card .btn-text {
+  color: #F5ECD5;
   font-size: 15px;
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   position: relative; /* Ensure the underline effect is positioned correctly */
   transition: var(--transition-1);
+  text-decoration: none; /* Remove default underline */
 }
 
-.btn-text::after {
+/* Underline effect on hover */
+.service-card .btn-text::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -990,29 +1014,11 @@ body.nav-active { overflow: hidden; }
   transition: width 0.3s ease-in-out;
 }
 
-.btn-text:is(:hover, :focus-visible)::after {
+.service-card:is(:hover, :focus-visible) .btn-text::after {
   width: 100%;
   height: 5px; /* Expands the underline on hover */
 }
 
-
-/* Remove any default underlines */
-.service-card .btn-text {
-  text-decoration: none;
-}
-
-
-
-
-
-
-.service-card .card-banner { transition: var(--transition-2); }
-
-.service-card:is(:hover, :focus-within) .card-banner { transform: scale(1.05); }
-
-.service .card-title {
-  margin-block-end: 8px; /* Reduce margin below the title */
-}
 
 
 /*-----------------------------------*\
