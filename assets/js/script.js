@@ -43,38 +43,37 @@ const toggleNavbar = function () {
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
+const topbar = document.querySelector(".topbar");
+
+window.addEventListener("scroll", () => {
+  const isAtTop = window.scrollY === 0;
+
+  if (isAtTop) {
+    topbar.style.display = "block"; // Show top bar when at the top (home)
+  } else {
+    topbar.style.display = "none"; // Hide top bar when scrolling
+  }
+});
+
+
 
 
 /**
  * HEADER & BACK TOP BTN
  */
+const header = document.querySelector(".header");
 
-const header = document.querySelector("[data-header]");
-const backTopBtn = document.querySelector("[data-back-top-btn]");
+window.addEventListener("scroll", () => {
+  const isAtTop = window.scrollY === 0;
 
-let lastScrollPos = 0;
-
-const hideHeader = function () {
-  const isScrollBottom = lastScrollPos < window.scrollY;
-  if (isScrollBottom) {
-    header.classList.add("hide");
+  if (isAtTop) {
+    header.classList.remove("hide"); // Show navbar when at the top (home)
   } else {
-    header.classList.remove("hide");
-  }
-
-  lastScrollPos = window.scrollY;
-}
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 50) {
-    header.classList.add("active");
-    backTopBtn.classList.add("active");
-    hideHeader();
-  } else {
-    header.classList.remove("active");
-    backTopBtn.classList.remove("active");
+    header.classList.add("hide"); // Hide navbar when scrolling down or up
   }
 });
+
+
 
 
 
