@@ -579,7 +579,23 @@ body.nav-active { overflow: hidden; }
   #HEADER
 \*-----------------------------------*/
 
-.header .btn { display: none; }
+/*-----------------------------------*
+  #HEADER
+\*-----------------------------------*/
+
+/* Keep the logo completely stable */
+.fixed-logo {
+  position: fixed;
+  top: 35px;
+  left: 0px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.fixed-logo img {
+  width: 200px;
+  height: auto;
+}
 
 .header {
   position: fixed;
@@ -607,8 +623,8 @@ body.nav-active { overflow: hidden; }
 .header .container {
   padding-inline: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -632,28 +648,42 @@ body.nav-active { overflow: hidden; }
 }
 
 .nav-open-btn .line-2 { animation-delay: 150ms; }
-
 .nav-open-btn .line-3 { animation-delay: 300ms; }
 
 .navbar {
   position: fixed;
   background-color: #8EACCD;
   top: 0;
-  left: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 360px;
+  right: 0;
+  max-width: 600px;
   padding-inline: 30px;
   padding-block-end: 10px;
   overflow-y: auto;
   visibility: hidden;
   z-index: 2;
   transition: var(--transition-2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-item {
+  text-align: right;
 }
 
 .navbar.active {
   visibility: visible;
-  transform: translateX(360px);
+  transform: translateX(-50%);
 }
 
 .navbar .close-btn {
@@ -665,31 +695,22 @@ body.nav-active { overflow: hidden; }
   margin-block: 30px 20px;
 }
 
-.navbar .close-btn ion-icon { --ionicon-stroke-width: 40px; }
-
 .navbar .close-btn:is(:hover, :focus-visible) { color: var(--gold-crayola); }
 
 .header .logo {
-  position: absolute;
-  top: 20px; /* Moves logo to the very top */
-  left: 0; /* Moves logo to the very left */
-
-  
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  pointer-events: none;
 }
-
-.navbar-list {
-  border-block-end: 1px solid var(--white-alpha-20);
-  margin-block-end: 100px;
-}
-
-.navbar-item { border-block-start: 1px solid var(--white-alpha-20); }
 
 .navbar-link {
   position: relative;
   font-size: var(--fontSize-label-2);
   text-transform: uppercase;
   padding-block: 10px;
-  max-width: unset;
+  text-align: center;
 }
 
 .navbar-link::after {
@@ -698,17 +719,15 @@ body.nav-active { overflow: hidden; }
   bottom: 0;
   left: 0;
   width: 0;
-  height: 3px; /* Thickness of the underline */
-  background-color: black; /* Change color if needed */
+  height: 0.5px;
+  background-color: black;
   transition: width 0.3s ease-in-out;
   display: block;
 }
 
-.navbar-link .span { transition: var(--transition-1); }
-
 .navbar-link:is(:hover, :focus-visible, .active)::after {
   width: 100%;
-  height: 5px; /* Expands the underline on hover */
+  height: 5px;
 }
 
 .navbar-link:is(:hover, :focus-visible, .active) .span {
@@ -727,26 +746,6 @@ body.nav-active { overflow: hidden; }
 
 .navbar-link:is(:hover, :focus-visible, .active) .separator { opacity: 1; }
 
-
-.navbar-title { margin-block-end: 15px; }
-
-.navbar-text { margin-block: 10px; }
-
-.navbar .body-4 { color: var(--quick-silver); }
-
-.sidebar-link { transition: var(--transition-1); }
-
-.sidebar-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
-
-.navbar .text-center .separator {
-  margin-block: 30px;
-  margin-inline: auto;
-}
-
-.navbar .contact-label { margin-block-end: 10px; }
-
-.navbar::-webkit-scrollbar-thumb { background-color: var(--white-alpha-10); }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -764,7 +763,6 @@ body.nav-active { overflow: hidden; }
   opacity: 1;
   pointer-events: all;
 }
-
 
 
 
@@ -980,9 +978,9 @@ body.nav-active { overflow: hidden; }
 
 /* Optional: Subtle hover effect */
 .service-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05); /* Reduced scale for a more subtle effect */
 }
+
 
 /* Limit hover effect to the image */
 .service-card:is(:hover, :focus-within) .card-banner {
