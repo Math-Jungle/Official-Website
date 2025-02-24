@@ -567,7 +567,104 @@ body.nav-active { overflow: hidden; }
 
 
 
+/*-----------------------------------*\
+  #TOPBAR
+\*-----------------------------------*/
 
+
+/* Hide by default */
+.nav-open-btn {
+  display: none;
+}
+
+/* Show on smaller screens (iPhones and other phones) */
+@media screen and (max-width: 600px) {
+  .nav-open-btn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .nav-open-btn .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: black;
+    margin: 5px 0;
+  }
+
+  /* Navbar styling */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 120vw;
+    max-width: 320px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+    padding: 60px 20px 20px;
+    padding-top: 40px !important;
+    z-index: 99;
+  }
+
+  /* Show navbar when active */
+  .navbar.active {
+    left: 0;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Vertical navbar list */
+  .navbar-list {
+    display: flex !important;
+    flex-direction: column;
+    padding-top: 0 !important;
+    margin: 0;
+    list-style: none;
+    margin-top: 0 !important;
+  }
+
+  .navbar-item:first-child {
+    margin-top: 0;
+  }
+  
+  .navbar-item {
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  
+  .navbar-link {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
+  
+  /* Hide the separator dots */
+  .separator {
+    display: none;
+  }
+ 
+}
 
 /*-----------------------------------*
   #HEADER
@@ -806,7 +903,7 @@ body.nav-active { overflow: hidden; }
   .hero-btn {
     right: 35% !important;
     transform: translateX(50%);
-    bottom: 30px !important; /* Adjust as needed */
+    bottom: 20px !important; /* Adjust as needed */
   }
 
     
