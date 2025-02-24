@@ -846,6 +846,8 @@ body.nav-active { overflow: hidden; }
   z-index: -1;
 }
 
+
+
 .hero .slider-item.active .slider-bg {
   animation: smoothScale 7s linear forwards;
 }
@@ -1182,18 +1184,48 @@ body.nav-active { overflow: hidden; }
   #FOOTER
 \*-----------------------------------*/
 
+.footer-top { margin-block-end: 0px; }
+
+.footer-brand {
+  position: relative;
+  padding: 2px 2px;
+  background-position: center top;
+  background-repeat: repeat;
+}
+
+.footer-brand::before,
+.footer-brand::after {
+  top: 0;
+  width: 15px;
+  height: 100%;
+}
+
+
 .footer {
   background-color: #405D72; /* Changed entire footer background */
-  padding-block-start: 5px; /* Reduced space between footer and previous section */
+  padding-block-start: 0px; /* Reduced space between footer and previous section */
   padding-block-end: 20px; /* Reduced space below copyright */
 }
 
-.footer-top {
+
+.footer-brand::before { left: 0; }
+
+.footer-brand::after { right: 0; }
+
+.footer-brand .logo {
+  max-width: max-content;
+  margin-inline: auto;
+  justify-content: center;
+  margin-bottom: 0px;
   display: flex;
-  justify-content: space-between; /* Aligns columns properly */
-  align-items: flex-start;
-  margin-block-end: 20px; /* Reduced gap */
-  margin-bottom: 0;
+  align-items: center;
+} 
+
+
+
+.footer-brand :is(.body-4, .label-1) {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
 }
 
 /* Style the email input field */
@@ -1205,56 +1237,43 @@ body.nav-active { overflow: hidden; }
   outline: none;
 }
 
-/* Ensure the form has a proper layout */
-.input-wrapper {
+
+.footer-brand .wrapper {
   display: flex;
-  align-items: center;
-  gap: 10px; /* Adds space between input and button */
-  max-width: 400px; /* Adjust width as needed */
-  margin-inline: auto;
-  position: relative;
-}
-
-/* Position the button at the right end */
-.input-wrapper .btn {
-  border-radius: 50px;
-  white-space: nowrap;
-  position: absolute;
-  right: 0;
-  padding: 12px 20px;
-}
-
-
-
-
-.footer-brand .logo {
-  max-width: max-content;
-  margin-inline: auto;
   justify-content: center;
-  display: flex;
-  align-items: center;
+  gap: 2px;
+  margin-block: 40px 25px;
 }
 
+.footer-brand .separator { animation: rotate360 15s linear infinite; }
 
+.footer-brand .label-1 { margin-block-end: 30px; }
 
+.footer-brand .label-1 .span {
+  display: inline;
+  color: var(--white);
+}
 
+.footer-brand .icon-wrapper .input-field { cursor: text; }
 
-
-.footer-brand .btn {
+.footer-brand .btn { 
   min-width: 100%;
-  margin-block-end: 1px; /* Reduced space below button */
 }
+
 
 .footer-list {
-  flex: 1; /* Ensures equal width distribution */
-  list-style: none;
+  display: grid;
+  gap: 20px;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .footer-list li {
-  margin-block-end: 8px; /* Reduced spacing between list items */
+  margin-block-end: 8px;
+  margin-bottom: 2px; /* Reduced spacing between list items */
 }
+
 
 .footer-link {
   color: var(--quick-silver);
@@ -1283,19 +1302,15 @@ body.nav-active { overflow: hidden; }
   height: 5px; /* Expands the underline on hover */
 }
 
-
-
-
 .footer-bottom {
   text-align: center;
   font-size: 100px; 
-  
 }
 
 .copyright {
   color: var(--quick-silver);
   line-height: var(--lineHeight-3);
-  font-size: 14px; /* Adjusted font size for better fit */
+  margin-top: 15px;
 }
 
 .copyright .link {
@@ -1304,7 +1319,72 @@ body.nav-active { overflow: hidden; }
   text-decoration: underline;
 }
 
+@media screen and (max-width: 430px) {
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
+  .footer-brand {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 14px; /* Reduce font size for better fit */
+  }
+
+  .input-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .input-field, .footer .btn {
+    width: 100px;
+    max-width: 100%;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: black; /* Match the current style */
+    padding: 0px 0px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 400px; /* Match subscribe button */
+  
+
+  .footer-bottom {
+    font-size: 14px; /* Adjust font size */
+  }
+}}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Adjust for better layout */
+  margin: 0 auto;
+}
+
+
+.input-field {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
 
 
 
@@ -1371,6 +1451,7 @@ body.nav-active { overflow: hidden; }
 
   }
 
+  
 
 
   /**
@@ -1456,6 +1537,11 @@ body.nav-active { overflow: hidden; }
 
   .hero-btn { transform: scale(0.7); }
 
+  .hero .slider-item .hero-title {
+    font-size: 5px;
+  }
+
+
 
 
   /**
@@ -1510,18 +1596,6 @@ body.nav-active { overflow: hidden; }
     flex-grow: 1;
     border-block: 1px solid var(--white-alpha-20);
   }
-
-
-
-  /**
-   * EVENT
-   */
-
-  .event .container {
-    max-width: 420px;
-    margin-inline: auto;
-  }
-
 
 
   /**
@@ -1616,19 +1690,6 @@ body.nav-active { overflow: hidden; }
 
 
 
-  /**
-   * RESERVATION
-   */
-
-  .reservation .input-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-  }
-
-  .reservation .input-wrapper:nth-child(4) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
 
 
@@ -1664,7 +1725,12 @@ body.nav-active { overflow: hidden; }
 
   }
 
-
+  @media screen and (max-width: 390px) {
+    .hero .slider-item .hero-title {
+      font-size: 5px;
+    }
+  }
+  
 
   /**
    * REUSED STYLE
@@ -1721,34 +1787,6 @@ body.nav-active { overflow: hidden; }
 
 
   /**
-   * SPECIAL DISH
-   */
-
-  .special-dish {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-  }
-
-  .special-dish-content { padding-inline: 50px 25px; }
-
-  .special-dish-content .container { position: relative; }
-
-  .special-dish .section-subtitle::after,
-  .special-dish .btn { margin-inline: 0; }
-
-  .special-dish-content .wrapper { justify-content: flex-start; }
-
-  .special-dish .abs-img {
-    position: absolute;
-    top: 10px;
-    left: -40px;
-    animation: move 5s linear infinite;
-  }
-
-
-
-  /**
    * MENU
    */
 
@@ -1767,26 +1805,6 @@ body.nav-active { overflow: hidden; }
   }
 
 
-
-  /**
-   * TESTIMONIALS
-   */
-
-  .testi-text {
-    max-width: 910px;
-    margin-inline: auto;
-  }
-
-
-
-  /**
-   * RESERVATION
-   */
-
-  .reservation-form {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-  }
 
 
 
@@ -1829,8 +1847,12 @@ body.nav-active { overflow: hidden; }
      * typography
      */
 
-    --fontSize-title-2: 2.5rem;
+    --fontSize-title-2: 0.1rem;
 
+  }
+
+  .hero .slider-item h1 {
+    font-size: smaller;
   }
 
 
