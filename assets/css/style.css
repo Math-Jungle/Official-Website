@@ -569,13 +569,6 @@ body.nav-active { overflow: hidden; }
 
 
 
-
-/*-----------------------------------*\
-  #TOPBAR
-\*-----------------------------------*/
-
-.topbar { display: none; color: black; }
-
 /*-----------------------------------*
   #HEADER
 \*-----------------------------------*/
@@ -583,8 +576,8 @@ body.nav-active { overflow: hidden; }
 /* Keep the logo completely stable */
 .fixed-logo {
   position: fixed;
-  top: 22px;
-  left: 0px;
+  top: -10px;
+  left: 5px;
   z-index: 9999;
   pointer-events: none;
 }
@@ -781,6 +774,20 @@ body.nav-active { overflow: hidden; }
 
 
 /* Slider Items */
+
+.hero .section-subtitle-hero {
+    color: black;
+    position: relative;
+    font-weight: var(--weight-bold);
+    font-size: large;
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-2);
+    margin-block-end: 12px;
+    margin-bottom: 0;
+    margin-top: -70px;
+    padding: 0;
+}
+
 .hero .slider-item {
   position: absolute;
   top: 50%;
@@ -838,7 +845,19 @@ body.nav-active { overflow: hidden; }
 
 .slider-btn ion-icon {
   font-size: 24px;
-  color: white;
+  color: black;
+}
+
+.slider-divider {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  opacity: 0.5;
+  transform: translate(-50%);
+  width: 250px;
+  height: 25px;
+  z-index: 1;
+  padding: 0;
 }
 
 /* Ensure slider buttons are visible */
@@ -1437,6 +1456,8 @@ body.nav-active { overflow: hidden; }
 
 @media (min-width: 575px) {
 
+ 
+
   /**
    * CUSTOM PROPERTY
    */
@@ -1463,51 +1484,8 @@ body.nav-active { overflow: hidden; }
     margin-inline: auto;
   }
 
-  .contact-number { --fontSize-body-1: 3rem; }
 
 
-
-  /**
-   * TOPBAR
-   */
-
-  .topbar {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-block: 10px;
-    border-block-end: 1px solid var(--white-alpha-20);
-    z-index: 4;
-    transition: var(--transition-1);
-  }
-
-  .topbar:has(~ .header.active) { transform: translateY(-100%); }
-
-  .topbar-item:not(.link),
-  .topbar .separator { display: none; }
-
-  .topbar .container,
-  .topbar-item {
-    display: flex;
-    align-items: center;
-  }
-
-  .topbar .container {
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .topbar-item { gap: 6px; }
-
-  .topbar-item ion-icon { --ionicon-stroke-width: 60px; }
-
-  .topbar-item .span { font-size: var(--fontSize-label-1); }
-
-  .topbar .link { transition: var(--transition-1); }
-
-  .topbar .link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
 
 
 
@@ -1515,7 +1493,7 @@ body.nav-active { overflow: hidden; }
    * HEADER
    */
 
-  .header { top: 51px; }
+  .header { top: 1px; }
 
   .header.active {
     padding-block: 20px;
@@ -1747,15 +1725,6 @@ body.nav-active { overflow: hidden; }
 
 
 
-  /**
-   * TOPBAR
-   */
-
-  .topbar-item:not(.link) { display: flex; }
-
-  .topbar .item-2 { margin-inline-end: auto; }
-
-
 
   /**
    * SERVICE
@@ -1868,15 +1837,6 @@ body.nav-active { overflow: hidden; }
     margin-inline: auto;
   }
 
-
-
-  /**
-   * TOPBAR
-   */
-
-  .topbar .container { max-width: unset; }
-
-  .topbar .separator { display: block; }
 
 
 
