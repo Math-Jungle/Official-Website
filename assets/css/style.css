@@ -470,7 +470,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .input-field {
-  background-color: var(--eerie-black-2);
+  background-color: #3C4048;
   color: var(--white);
   height: 56px;
   padding: 10px 20px;
