@@ -361,7 +361,7 @@ body.nav-active { overflow: hidden; }
   height: 56px;
 }
 
-.btn-secondary::before { background-color: #7FA1C3; }
+.btn-secondary::before { background-color: #BFBBA9; }
 
 .btn-secondary .text-2 { color: black; }
 
