@@ -852,10 +852,10 @@ body.nav-active { overflow: hidden; }
   position: absolute;
   top: 27%;
   left: 50%;
-  opacity: 0.5;
+  opacity: 40%;
   transform: translate(-50%);
   width: 250px;
-  height: 25px;
+  height: 28px;
   z-index: 1;
   padding: 0;
 }
@@ -1816,7 +1816,7 @@ body.nav-active { overflow: hidden; }
      * typography
      */
 
-    --fontSize-title-2: 0.1rem;
+    --fontSize-title-2: 2.5rem;
 
   }
 
